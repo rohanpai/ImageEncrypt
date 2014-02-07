@@ -23,7 +23,7 @@ var encryptImg = function(){
             encryptedCanvas.width = imgCanvas.width;
             encryptedCanvas.height = imgCanvas.height;
             
-            var key = Math.random() * 1000;
+            var key = Math.random() * 365464564556456456456456456456;
 
             var encryptedCtx = encryptedCanvas.getContext("2d");
             var imgCtx = imgCanvas.getContext("2d");
