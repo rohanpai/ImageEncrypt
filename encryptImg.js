@@ -15,6 +15,10 @@ var encryptImg = function(){
 	        return image;
      };
 
+     function iterateCanvas (action){
+        
+     }
+
 
     return{
          encryptImage: function(image){
@@ -70,18 +74,21 @@ var encryptImg = function(){
             for(var i = 0; i < imgCanvas.height; i++){
                 for(var j = 0; j < imgCanvas.width; j++){
                     var imgPixel = imgCtx.getImageData(i,j,1,1).data;
+                    var newPixels = [];
 
-                    for (var k = 0; k < 3; k++) {
-                        var binary = imgPixel[k].toString(2);
-                        while(binary.length < 8)
-                            binary = '0' + binary
-                        if(binary.charAt(binary.length - 1) !== secret.message.charAt(secret.marker)){
-                            binary[binary.length -1] = secret.message.charAt(secret.marker);
+                    if(secret.marker < secret.message.length){
+                        for (var k = 0; k < 3; k++) {
+                            var binary = imgPixel[k].toString(2);
+                            while(binary.length < 8)
+                                binary = '0' + binary
+                            if(binary[binary.length - 1] !== secret.message.charAt(secret.marker)){
+                                debugger;
+                                binary =  binary.substring(0,7) + secret.message.charAt(secret.marker);
+                            }
+                            secret.marker++;
+                            imgPixel[k] = parseInt(binary, 2);
                         }
-                        secret.marker++;
-                        imgPixel[k] = parseInt(binary, 2);
                     }
-
 
                     encryptedCtx.fillStyle = "rgb("+imgPixel[0]+","+imgPixel[1]+","+imgPixel[2]+")"; 
                     encryptedCtx.fillRect(i,j,1,1);
