@@ -5,16 +5,16 @@
 <body>
 
 <img id="image" src="image.jpg"/>
-
 <div id="holder"></div>
-
 <script src="encryptImg.js"></script>
 <script>
 var img = document.getElementById('image');
 var tobias = new encryptImg;
-var canvasobj = tobias.encryptImage(img);
+//var canvasobj = tobias.encryptImage(img);
+//document.getElementById('holder').appendChild(canvasobj);
+var stego = tobias.stego(img, "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius venenatis est id malesuada. Mauris ullamcorper vehicula laoreet. Praesent non sollicitudin nisl. Maecenas sagittis tellus in ligula lacinia, id imperdiet tortor auctor. Mauris adipiscing cursus quam ut tempor. Nullam a elementum odio, id dapibus eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra augue ac aliquet varius. In est mauris, facilisis et faucibus nec, elementum at dolor. Etiam blandit ipsum quis faucibus euismod. Sed fringilla purus ante, vestibulum consequat odio porta ac. Etiam urna libero, elementum vitae tincidunt sit amet, sagittis eget magna. Nullam porta purus mollis convallis blandit. Mauris faucibus, purus vel blandit feugiat, odio tellus hendrerit felis, sit amet feugiat massa mi quis ipsum. In eu dapibus metus. Integer nunc metus, gravida et nunc id, semper tincidunt tortor. Nunc lobortis sem diam, a elementum turpis tempor vel. Pellentesque vitae sagittis eros, vitae pretium ipsum. In hac habitasse platea dictumst. Duis aliquam cursus diam, sit amet iaculis eros imperdiet in. Proin pellentesque ullamcorper pulvinar. Quisque consectetur mattis est quis rhoncus. Aenean fermentum massa tortor, eu pretium lectus volutpat at. Donec a consectetur sapien. Suspendisse faucibus ullamcorper fringilla. Cras lacinia metus sed hendrerit egestas. Donec sit amet velit non purus hendrerit dapibus. Praesent dignissim interdum metus, a porttitor velit aliquet sit amet. Maecenas est ligula, mattis eget ipsum id, ultricies posuere augue.!");
+document.getElementById('holder').appendChild(stego);
 
-document.getElementById('holder').appendChild(canvasobj);
 
 </script>
 
