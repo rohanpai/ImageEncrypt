@@ -15,11 +15,6 @@ var encryptImg = function(){
 	        return image;
      };
 
-     function iterateCanvas (action){
-        
-     }
-
-
     return{
          encryptImage: function(image){
             var imgCanvas = convertImageToCanvas(image);
